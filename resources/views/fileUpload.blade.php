@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <title>Ejemplo de subida de archivos</title>
-    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -15,12 +16,12 @@
             <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>{{ $message }}</strong>
         </div>
-        <a href="uploads/{{ Session::get('file') }}">{{ Session::get('file') }}</a>
+        <a href="uploads/{{ Session::get('file') }}" target="_blank">{{ Session::get('file') }}</a>
         @endif
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.
+                <strong>Ups!</strong> Hay un problema con la entrada de este archivo.
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -38,7 +39,7 @@
                 </div>
    
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-success">Upload</button>
+                    <button type="submit" class="btn btn-success">Subir</button>
                 </div>
    
             </div>

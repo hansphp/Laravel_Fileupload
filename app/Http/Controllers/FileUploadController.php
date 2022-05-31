@@ -18,7 +18,7 @@ class FileUploadController extends Controller
         $request->file->move(public_path('uploads'), $fileName);
    
         return back()
-            ->with('success','You have successfully upload file.')
+            ->with('success','Has subido correctamente el archivo.')
             ->with('file',$fileName);
     }
 }
